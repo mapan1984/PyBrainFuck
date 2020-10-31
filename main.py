@@ -20,4 +20,3 @@ elif args.file:
         i = Interpreter(code)
 
 i.run()
-

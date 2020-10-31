@@ -1,6 +1,7 @@
 START = 1
 END = 2
 
+
 class Grid:
 
     def __init__(self):
@@ -46,4 +47,3 @@ class Grid:
 
     def operate(self, c):
         return self.operation[c]()
-

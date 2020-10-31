@@ -31,7 +31,8 @@ class Interpreter:
         while True:
             try:
                 c = self.cur
-            except:
+            except IndexError as error:
+                # 结束运行
                 break
             ret = self.grid.operate(c)
 
@@ -46,7 +47,7 @@ class Interpreter:
                     if jump == 0:
                         break
                     self.point -= 1
-            elif ret == END:  # 从'['跳过对应的`]`
+            elif ret == END:  # 从`[`跳过对应的`]`
                 jump = 0
                 while True:
                     cur = self.cur
@@ -61,7 +62,7 @@ class Interpreter:
             else:
                 self.point += 1
 
+
 if __name__ == '__main__':
     import doctest
     doctest.testmod()
-
